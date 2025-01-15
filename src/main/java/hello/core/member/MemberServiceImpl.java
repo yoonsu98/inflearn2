@@ -1,5 +1,8 @@
 package hello.core.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 /**
  * packageName    : hello.core.member
  * fileName       : MemberServiceImpl
@@ -7,10 +10,12 @@ package hello.core.member;
  * date           : 2025-01-11
  * description    :
  */
+@Component
 public class MemberServiceImpl implements MemberService {
 
     private final MemberRepository memberRepository;
 
+    @Autowired // ac.getBean(MemberRepository.class)
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
